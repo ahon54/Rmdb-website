@@ -1,9 +1,8 @@
-import React, {useState, useEffect } from "react";
+import React from "react";
 
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 
 import NoImage from '../images/no_image.jpg';
-import API from '../API';
 import { useHomeFetch } from '../hooks/useHomeFetch'
 import HeroImage from './HeroImage';
 import Grid from './Grid';

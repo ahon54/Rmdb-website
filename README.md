@@ -16,6 +16,8 @@ This is an app that displays all movies info.
 
 Sessions is used instead of local storage because new popular movies are always changing
 
+functional component is used because I can use multiple use states
+
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine.
@@ -60,7 +62,10 @@ npm start
 
 ## 🌈 Incomplete Task
 
-- MongoDB for users 
+- MongoDB for users
+- Make it Typescript
+- Login/Sign up
+- Rating component
 
 ## 📜 License <a name = "license"></a>
 

@@ -1,6 +1,3 @@
-import react from "react";
-
-
 //Helpers
 import { calcTime, convertMoney } from "../../helpers";
 
