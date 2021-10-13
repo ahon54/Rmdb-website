@@ -1,6 +1,8 @@
 import { useState, useEffect} from "react";
+//API
 import API from '../API'
-
+//helpers
+import { isPersistedState } from "../helpers";
 const initialState = {
     page: 0,
     results: [],
@@ -35,6 +37,15 @@ export const useHomeFetch = () => {
     }
     //initial and search
     useEffect(() => {
+        if (!searchTerm) {
+            const sessionState = isPersistedState('homeState');
+            if (sessionState) {
+                console.log("grabbing from sessionStorage")
+                setState(sessionState);
+                return;
+            }
+        }
+        console.log("grabbing from api")
         setState(initialState); //because I want to reset the state whenever i search again
         fetchMovies(1, searchTerm);
     }, [searchTerm]); //depedency array
@@ -47,5 +58,11 @@ export const useHomeFetch = () => {
         fetchMovies(state.page + 1, searchTerm);
         setIsLoadingMore(false);
     }, [isLoadingMore, searchTerm, state.page])
+
+    //Write to sessionStorage
+
+    useEffect(() => {
+        if(!searchTerm) sessionStorage.setItem('homeState', JSON.stringify(state)) //can only write string in session storage
+    }, [searchTerm, state])
     return { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
 }
