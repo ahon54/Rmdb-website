@@ -52,9 +52,7 @@ npm start
 
 ## ⚙️ Built Using <a name= "built_using"></a>
 
-- Backend language
-
-  - JavaScript
+- React
 
 ## ✏️ Authors <a name= "authors"></a>
 
@@ -62,7 +60,7 @@ npm start
 
 ## 🌈 Incomplete Task
 
-- Make controller task more readable by creating an async wrapper
+- MongoDB for users 
 
 ## 📜 License <a name = "license"></a>
 
